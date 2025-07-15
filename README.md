@@ -30,8 +30,9 @@ pip install pycryptodomex pymitter scrypt crc16
 
 Each message has the format:
 
+```bash
 <content>_<counter>_<senderID>*<crc16>
-
+```
 
 ### 📚 How to Use as a Library
 
@@ -44,3 +45,4 @@ def on_message(msg):
 receiver = ClientThread(name="Receiver", host_ip='127.0.0.1', port_addr=5005)
 receiver.recieveEvent.on("recieve_packet", on_message)
 receiver.start()
+```
